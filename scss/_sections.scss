@@ -1,0 +1,159 @@
+// the sections general
+
+
+@include media-breakpoint-up(md) {
+  main {
+    padding-top: 30vh // initial offset;
+  }
+
+  section {
+    display: flex;
+    flex-direction: row-reverse;
+
+    .text {
+      flex: 0 1 50%;
+      padding-top: 30vh;
+      padding-bottom: 20vh;
+      padding-left: var(--column-padding);
+      padding-right: var(--column-padding);
+    }
+
+    &:last-child {
+      .text {
+        padding-bottom: 5em;
+      }
+    }
+
+    .image {
+      flex: 0 0 50%;
+      position: relative;
+
+
+      &__wrapper {
+        position: fixed;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: var(--background-color-image);
+      }
+
+      &__holder {
+        display: flex;
+        justify-content: center;
+
+      }
+
+      &__text {
+        position: absolute;
+        top: 30vh;
+        padding-left: var(--column-padding);
+        padding-right: var(--column-padding);
+      }
+    }
+  }
+}
+
+// small screens 
+@include media-breakpoint-down(md) {
+  main {
+    padding-top: 20vh; // initial offset;
+  }
+
+  section {
+    display: block;
+
+    .text {
+      z-index: 5;
+      position: relative;
+      margin-top: 35vh;
+      padding-top: 35vh;
+      padding-bottom: 105px; // to make the box shadow visioble
+      margin-bottom: 20vh;
+      overflow-x: hidden;
+
+
+      &__inner {
+        padding-left: calc(var(--column-padding) * 2);
+        padding-right: calc(var(--column-padding) * 2);
+        margin-left: calc(var(--column-padding) * -1);
+        margin-right: calc(var(--column-padding) * -1);
+        background: var(--background-color-image-transluscent);
+        box-shadow: 0 -55px 55px var(--background-color-image-transluscent), 0 55px 55px var(--background-color-image-transluscent);
+      }
+    }
+
+    &:last-child {
+      .text {
+        padding-bottom: 3em;
+        margin-bottom: 0;
+      }
+    }
+
+    .image {
+      position: relative;
+
+
+      &__wrapper {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--background-color-image);
+      }
+
+      &__holder {
+        display: flex;
+        justify-content: center;
+        padding-top: 10vh;
+      }
+
+      &__text {
+        position: absolute;
+        top: 16vh;
+        padding-left: var(--column-padding);
+        padding-right: var(--column-padding);
+      }
+    }
+  }
+}
+
+// portrait
+
+.image__holder.portrait {
+  height: 100%;
+  background-image: url('/img/portrait-michael-houben-light@1x.jpg');
+  background-repeat: no-repeat;
+  background-position: center 30px;
+  background-size: cover;
+
+  @include media-breakpoint-up(xs) {
+    background-position: center 0px;
+    background-image: url('/img/portrait-michael-houben-light.jpg');
+  }
+}
+
+[data-theme="dark"] {
+  .image__holder.portrait {
+    background-image: url('/img/portrait-michael-houben-dark@1x.jpg');
+
+    @include media-breakpoint-up(xs) {
+      background-image: url('/img/portrait-michael-houben-dark.jpg');
+    }
+  }
+}
+
+// worldmap
+
+.image__holder.worldmap {
+  height: 100%;
+  background-image: url('/img/worldmap-light.svg');
+  background-repeat: no-repeat;
+  background-position: center 40vh;
+  background-size: contain;
+}
+
+[data-theme="dark"] {
+  .image__holder.worldmap {
+    background-image: url('/img/worldmap-dark.svg');
+  }
+}

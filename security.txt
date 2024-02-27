@@ -1,0 +1,2 @@
+Contact: mailto:security@houben.it
+Encryption: https://houben.it/publickey.txt

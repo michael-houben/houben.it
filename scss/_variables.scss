@@ -1,0 +1,25 @@
+:root {
+  --body-font: 'Fira Mono', Courier;
+  --column-padding: 20px;
+  --base-font-size: 18px;
+
+  --text: #171817;
+  --background-color-text: #fff;
+  --background-color-image: rgba(245, 245, 245, 1);
+  --background-color-image-transluscent: rgba(245, 245, 245, .9);
+}
+
+
+[data-theme="dark"] {
+  --text: #fff;
+  --background-color-text: rgba(0, 0, 0, 1); // indicator color
+  --background-color-image: rgba(23, 24, 23, 1);
+  --background-color-image-transluscent: rgba(23, 24, 23, .8);
+}
+
+@media (min-width:768px) {
+  :root {
+    --column-padding: 3em;
+    --base-font-size: 24px;
+  }
+}

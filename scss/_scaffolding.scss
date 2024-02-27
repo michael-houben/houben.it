@@ -1,0 +1,63 @@
+// basic styles and helperclasses
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background-color-text);
+}
+
+
+
+.svg-hide {
+  display: none;
+}
+
+.signet {
+  svg {
+    height: 12em;
+    width: 12em;
+  }
+}
+
+
+.portrait {
+  &--dark {
+    display: none;
+  }
+
+  &--light {
+    display: block;
+  }
+}
+
+[data-theme="dark"] {
+  .portrait {
+    &--dark {
+      display: block;
+    }
+
+    &--light {
+      display: none;
+    }
+  }
+
+}
+
+.shadow {
+  display: none;
+}
+
+@include media-breakpoint-up(md) {
+  .shadow {
+    display: block;
+    height: 100px;
+    width: 48%;
+    background: transparent;
+    box-shadow: 0 -55px 55px var(--background-color-text);
+    position: fixed;
+    bottom: -100px;
+    z-index: 12;
+  }
+}

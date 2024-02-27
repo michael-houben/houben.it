@@ -1,0 +1,101 @@
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+
+  span {
+    margin: 0 5px;
+    font-size: .8rem;
+    letter-spacing: .1em;
+  }
+}
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  height: 26px;
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: var(--text);
+  cursor: pointer;
+  position: relative;
+  transition: .4s;
+  height: 24px;
+  width: 40px;
+}
+
+.slider:before {
+  background-color: var(--background-color-image);
+  bottom: 4px;
+  content: "";
+  height: 16px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 16px;
+  transform: translateX(16px);
+}
+
+input:checked+.slider:before {
+  transform: translateX(0);
+}
+
+
+// wider screens: 
+
+@media(min-width: 768px) {
+  .theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+
+    span {
+      margin: 0 10px;
+      font-size: 1rem;
+      letter-spacing: .1em;
+    }
+  }
+
+  .theme-switch {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .theme-switch input {
+    display: none;
+  }
+
+  .slider {
+    background-color: var(--text);
+    cursor: pointer;
+    position: relative;
+    transition: .4s;
+    height: 34px;
+    width: 60px;
+  }
+
+  .slider:before {
+    background-color: var(--background-color-image);
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+    transform: translateX(26px);
+  }
+
+  input:checked+.slider:before {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,38 @@
+// toggle able imprint
+.imprint {
+  margin-top: 2em;
+}
+
+
+.imprint-toggler {
+  background: transparent;
+  border: none;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+
+  span {
+    padding-left: .4em;
+  }
+
+  svg {
+    height: .9em;
+    width: .9em;
+    transition: transform .2s ease-out;
+  }
+}
+
+.open .imprint-toggler svg {
+  transform: rotate(90deg);
+}
+
+
+.imprint-content {
+  overflow: hidden;
+  height: 0;
+  transition: all .4s;
+}
+
+.open .imprint-content {
+  height: 48em;
+}
