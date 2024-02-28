@@ -1,8 +1,25 @@
 // toggle able imprint
 .imprint {
   margin-top: 2em;
+
+  details {
+    summary {
+      cursor: pointer;
+      list-style: none;
+    }
+  }
 }
 
+summary::marker {
+  display: none;
+}
+
+// dont display the marker on webkit
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+ 
 
 .imprint-toggler {
   background: transparent;
@@ -24,15 +41,4 @@
 
 .open .imprint-toggler svg {
   transform: rotate(90deg);
-}
-
-
-.imprint-content {
-  overflow: hidden;
-  height: 0;
-  transition: all .4s;
-}
-
-.open .imprint-content {
-  height: 48em;
 }
