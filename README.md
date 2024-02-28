@@ -17,3 +17,6 @@ html5 boilerplate, Sass, GSAP, parcel
 ### Specials:
 eVerYTHing!!! ist local, no dependecies or frameworks or cdns or cookies  
 the value for the `dark mode`™ is stored in the local storage.
+
+### Credits:
+webdesign by Michael Rolfsen, [`bold & friendly`](https://www.boldandfriendly.de/)
